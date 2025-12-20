@@ -1,6 +1,8 @@
-USE bronze;
--- Create 3 tables
+-- Using mySQL
 
+use bronze;
+
+DROP TABLE IF EXISTS bronze.crm_cust_info;
 CREATE TABLE bronze.crm_cust_info (
 	cst_id INT,
 	cst_key NVARCHAR(50),
@@ -11,6 +13,7 @@ CREATE TABLE bronze.crm_cust_info (
 	cst_create_date DATE
 );
 
+DROP TABLE IF EXISTS bronze.crm_prd_info;
 CREATE TABLE bronze.crm_prd_info (
 	prd_id INT,
 	prd_key NVARCHAR(50),
@@ -21,6 +24,7 @@ CREATE TABLE bronze.crm_prd_info (
 	prd_end_dt DATE
 );
 
+DROP TABLE IF EXISTS bronze.crm_sales_details;
 CREATE TABLE bronze.crm_sales_details (
 	sls_ord_num NVARCHAR(50),
 	sls_prd_key NVARCHAR(50),
@@ -31,5 +35,26 @@ CREATE TABLE bronze.crm_sales_details (
     sls_sales INT,
     sls_quantity INT,
     sls_price INT
+);
+
+DROP TABLE IF EXISTS bronze.epr_cust_az12;
+CREATE TABLE bronze.epr_cust_az12 (
+	cid NVARCHAR(50),
+    bdate DATE,
+    gen NVARCHAR(50)
+);
+
+DROP TABLE IF EXISTS bronze.epr_loc_a101;
+CREATE TABLE bronze.epr_loc_a101 (
+	cid NVARCHAR(50),
+    cntry NVARCHAR(50)
+);
+
+DROP TABLE IF EXISTS bronze.epr_px_cat_g1v2;
+CREATE TABLE bronze.epr_px_cat_g1v2 (
+	id NVARCHAR(50),
+	cat NVARCHAR(50),
+	subcat NVARCHAR(50),
+	maintenance NVARCHAR(50)
 );
     
