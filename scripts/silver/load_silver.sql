@@ -275,9 +275,9 @@ BEGIN
 	FROM bronze.erp_px_cat_g1v2;
 	
     SET end_time = NOW();
-		SELECT CONCAT('Load Duration: ', 
-			TIMESTAMPDIFF(SECOND, start_time, end_time), ' seconds')
-	AS msg;
+	INSERT INTO tmp_log (msg) VALUES
+        (CONCAT('Load Duration: ', 
+		TIMESTAMPDIFF(SECOND, start_time, end_time), ' seconds'))	
     
     COMMIT;
     
