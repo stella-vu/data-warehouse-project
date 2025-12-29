@@ -74,10 +74,10 @@ set global local_infile = 0;
 
 -- Checking data:
 USE bronze;
-select * from crm_cust_info;
+select * from bronze.crm_cust_info;
 select * from bronze.crm_prd_info;
-select * from crm_sales_details;
-select * from erp_cust_az12;
-select * from erp_loc_a101;
-select * from erp_px_cat_g1v2;
+select * from bronze.crm_sales_details;
+select * from bronze.erp_cust_az12;
+select * from bronze.erp_loc_a101;
+select * from bronze.erp_px_cat_g1v2;
 
