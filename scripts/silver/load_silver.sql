@@ -263,7 +263,7 @@ BEGIN
 			WHEN cntry = '' THEN 'n/a'
 			WHEN cntry = 'DE' THEN 'Germany'
 			ELSE cntry
-		END cntry
+		END cntry ---- Normalize and Handle missing or blank country codes
 	FROM bronze.erp_loc_a101;
     
     SET end_time = NOW();
@@ -287,7 +287,7 @@ BEGIN
 		maintenance
 	)
 	SELECT 
-		id,
+		REPLACE(id,'\n','') as id, -- removing invisible character in front of id
 		cat,
 		subcat,
 		maintenance
