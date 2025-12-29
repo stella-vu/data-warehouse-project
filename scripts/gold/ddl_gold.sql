@@ -16,9 +16,9 @@ Usage:
 -- =============================================================================
 -- Create Dimension: gold.dim_customers
 -- =============================================================================
-DROP VIEW IF EXISTS gold.dim_customer; 
+DROP VIEW IF EXISTS gold.dim_customers; 
 
-CREATE VIEW gold.dim_customer AS
+CREATE VIEW gold.dim_customers AS
 SELECT
 	ROW_NUMBER() OVER (ORDER BY cst_id) AS customer_key, -- Surrogate key
     ci.cst_id AS customer_id,
@@ -81,10 +81,10 @@ SELECT
 FROM silver.crm_sales_details sd
 LEFT JOIN gold.dim_products pr
 	ON sd.sls_prd_key = pr.product_number
-LEFT JOIN gold.dim_customer cu
+LEFT JOIN gold.dim_customers cu
 	ON sd.sls_cust_id = cu.customer_id;
 
 -- Check data from gold_layer
-SELECT * FROM gold.dim_customer;
+SELECT * FROM gold.dim_customers;
 SELECT * FROM gold.dim_products;
 SELECT * FROM silver.crm_sales_details;
