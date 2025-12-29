@@ -42,10 +42,12 @@ HAVING COUNT(*) > 1;
 -- Checking 'gold.fact_sales'
 -- ====================================================================
 -- Check the data model connectivity between fact and dimensions
-SELECT * 
+SELECT 
+	*
 FROM gold.fact_sales f
 LEFT JOIN gold.dim_customers c
-ON c.customer_key = f.customer_key
+ON c.customer_id = f.customer_id
 LEFT JOIN gold.dim_products p
-ON p.product_key = f.product_key
-WHERE p.product_key IS NULL OR c.customer_key IS NULL  
+ON p.product_number = f.product_number
+WHERE p.product_key IS NULL OR c.customer_key IS NULL;
+
