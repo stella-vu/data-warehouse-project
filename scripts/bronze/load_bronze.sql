@@ -1,3 +1,15 @@
+/*
+===============================================================================
+Load Bronze Layer (Source -> Bronze)
+===============================================================================
+Script Purpose:
+    This step loads data into the 'bronze' schema from external CSV files. 
+    It performs the following actions:
+    - Allow mySQL upload data from local file
+    - Truncates the bronze tables before loading data.
+    - Uses the 'LOAD DATA LOCAL INFILE' command to load data from csv Files to bronze tables.
+===============================================================================
+*/
 
 -- Turn local_infile ON
 set global local_infile = 1;
