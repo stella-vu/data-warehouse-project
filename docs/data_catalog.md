@@ -15,10 +15,10 @@ Stores customer details enriched with demographic and geographic data.
 | customer_number   | VARCHAR(50)     | Alphanumeric identifier representing the customer, used for tracking and referencing. |
 | first_name        | VARCHAR(50)     | The customer's first name, as recorded in the system. |
 | last_name         | VARCHAR(50)     | The customer's last name, as recorded in the system. |
-| country           | VARCHAR(50)     | Country where the customer resides (e.g., 'Australia') |
 | marital_status    | VARCHAR(50)    | The marital status of the customer (e.g., 'Married', 'Single'). |
 | gender            | VARCHAR(50)     | The customer's gender (e.g., 'Male', 'Female','n/a') |
 | birthday    | DATE             | The customer's date of birth, formatted as YYYY-mm-dd (e.g., 1971-10-06) |
+| country           | VARCHAR(50)     | Country where the customer resides (e.g., 'Australia') |
 | created_date      | DATE         | Timestamp indicating when the customer record was created. |
 
 ---
@@ -50,11 +50,11 @@ Stores transactional sales data for analytical purposes.
 | Column Name     | Data Type        | Description |
 |-----------------|------------------|-------------|
 | order_number    | NVARCHAR(50)     | A unique alphanumeric identifier for each sales order (e.g., 'SO54496'). |
-| product_key     | INT              | Surrogate key linking the order to the product dimension table. |
-| customer_key    | INT              | Surrogate key linking the order to the customer dimension table. |
+| product_number     | INT              | Surrogate key linking the order to the product dimension table. |
+| customer_id    | INT              | Surrogate key linking the order to the customer dimension table. |
 | order_date      | DATE             | The date when the order was placed. |
 | shipping_date   | DATE             | The date when the order was shipped to the customer. |
 | due_date        | DATE             | The date when the order payment was due. |
-| sales_amount    | INT              | The total monetary value of the sale for the line item, in whole currency units (e.g., 25). |
+| sales    | INT              | The total monetary value of the sale for the line item, in whole currency units (e.g., 25). |
 | quantity        | INT              | The number of units of the product ordered for the line item (e.g., 1). |
 | price           | INT              | The price per unit of the product for the line item, in whole currency units (e.g., 25). |
