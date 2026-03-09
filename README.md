@@ -18,6 +18,8 @@ There are some typical mistakes in the dataset as showing below:
 - Invalid date ranges and orders.
 <img src="tests/quality_example/invalid_date.png" alt="Alt text" width="300px" height="300px">
 
+There is more poor quality data and I provided some data cleaning methods in this project. For detail, please read scripts and tests file.
+
 ---
 
 ## Project Overview
