@@ -3,13 +3,21 @@
 Welcome to the Data Warehouse and Analytics Project repository! This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
 
 ---
-## Data Architecture
-The data architecture for this project follows Medallion Architecture Bronze, Silver, and Gold layers:
-<img src="docs/data_architecture.png" alt="Alt text" width="900px" height="600px">
 
-1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
-2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
-3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
+## Data quality in raw dataset
+There are some typical mistakes in the dataset as showing below:
+- Null or duplicate primary keys.
+<img src="tests/quality_example/duplicated_primary_key.png" alt="Alt text" width="300px" height="300px">
+
+- Unwanted spaces in string fields, in this example: customer's first name
+<img src="tests/quality_example/unwanted_space.png" alt="Alt text" width="300px" height="300px">
+
+- Data standardization and consistency.
+<img src="tests/quality_example/data_standardization.png" alt="Alt text" width="300px" height="300px">
+
+- Invalid date ranges and orders.
+<img src="tests/quality_example/invalid_date.png" alt="Alt text" width="300px" height="300px">
+
 ---
 
 ## Project Overview
@@ -20,6 +28,16 @@ This project involves:
 2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
 3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
 4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
+
+---
+
+## Data Architecture
+The data architecture for this project follows Medallion Architecture Bronze, Silver, and Gold layers:
+<img src="docs/data_architecture.png" alt="Alt text" width="900px" height="600px">
+
+1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
+2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
+3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
 
 ---
 
@@ -46,11 +64,6 @@ Develop SQL-based analytics to deliver detailed insights into:
 - **Sales Trends**
 
 These insights empower stakeholders with key business metrics, enabling strategic decision-making.  '
-
----
-
-## Data Quality in each layer
-
 
 ---
 
