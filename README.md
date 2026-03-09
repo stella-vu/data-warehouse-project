@@ -4,7 +4,7 @@ Welcome to the Data Warehouse and Analytics Project repository! This project dem
 
 ---
 
-## Data quality in raw dataset
+## Raw Data Quality
 There are some typical mistakes in the dataset as showing below:
 - Null or duplicate primary keys.
 <img src="tests/quality_example/duplicated_primary_key.png" alt="Alt text" width="300px" height="300px">
